@@ -35,6 +35,19 @@ class Matriz {
 		bool Suma(Matriz p){
 			bool k = false;
 			if(p.getAncho() == ancho && p.getAltura() == altura){
+				for(int x = 0;x < ancho;x++){
+					for(int xa = 0;xa < altura;xa++){
+						cout<<"["<<matrizz[x][xa]<<"]";
+					}
+					cout<<endl;
+				}
+				cout<<"+"<<endl;
+				for(int x = 0;x < ancho;x++){
+					for(int xa = 0;xa < altura;xa++){
+						cout<<"["<<p.getMatrizz()[x][xa]<<"]";
+					}
+					cout<<endl;
+				}
 				for(int ab = 0; ab < ancho; ab++){
 					for(int ba = 0; ba < altura ;ba++){
 						matrizz[ab][ba] = matrizz[ab][ba]+p.getMatrizz()[ab][ba];
@@ -53,6 +66,19 @@ class Matriz {
 		bool Resta(Matriz p){
 			bool k = false;
 			if(p.getAncho() == ancho && p.getAltura() == altura){
+				for(int x = 0;x < ancho;x++){
+					for(int xa = 0;xa < altura;xa++){
+						cout<<"["<<matrizz[x][xa]<<"]";
+					}
+					cout<<endl;
+				}
+				cout<<"+"<<endl;
+				for(int x = 0;x < ancho;x++){
+					for(int xa = 0;xa < altura;xa++){
+						cout<<"["<<p.getMatrizz()[x][xa]<<"]";
+					}
+					cout<<endl;
+				}
 				for(int ab = 0; ab < ancho; ab++){
 					for(int ba = 0; ba < altura ;ba++){
 						matrizz[ab][ba] = matrizz[ab][ba]-p.getMatrizz()[ab][ba];
@@ -69,16 +95,15 @@ class Matriz {
 		}
 		
 		bool Multiplicacion(int jk){
-			bool k = false;
-				for(int ab = 0; ab < ancho; ab++){
-					for(int ba = 0; ba < altura ;ba++){
-						matrizz[ab][ba] = matrizz[ab][ba]*jk;
-						cout<<"["<<matrizz[ab][ba]<<"]";
+			bool k = true;
+			for(int ab = 0; ab < ancho; ab++){
+				for(int ba = 0; ba < altura ;ba++){
+					matrizz[ab][ba] = matrizz[ab][ba]*jk;
+					cout<<"["<<matrizz[ab][ba]<<"]";
 						
-					}
-					cout<<endl;
 				}
-				k = true;
+				cout<<endl;
+			}
 			return k;
 		}
 		
@@ -117,6 +142,9 @@ class Matriz {
 		int** getMatrizz(){
 			return matrizz;
 		}
+		
+		~Matriz(){
 			
+		}	
 };
 #endif
